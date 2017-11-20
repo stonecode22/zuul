@@ -20,7 +20,7 @@ class Room
   void add_item(item* new_item);
   item* drop_item(char* item_id);
   bool room_items();
-  vector<item*> inventory;
+  vector<item*> inv;
   
  private:
   char* id;

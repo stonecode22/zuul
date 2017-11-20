@@ -44,17 +44,17 @@ Room *Room::get_exit(int exit)
 
 void Room:: add_item(item* new_item)
 {
-  inventory.push_back(new_item);
+  inv.push_back(new_item);
 }
 
 item* Room::drop_item(char* item_id)
 {
-  for(int i = 0; i < inventory.size(); i++)
+  for(int i = 0; i < inv.size(); i++)
     {
-      if(!strcmp(item_id, inventory.at(i)->id))
+      if(!strcmp(item_id, inv.at(i)->id))
 	{
-	  item* get_item = inventory.at(i);
-	  inventory.erase(inventory.begin() + i);
+	  item* get_item = inv.at(i);
+	  inv.erase(inv.begin() + i);
 	  return get_item;
 	}
     }
@@ -63,7 +63,7 @@ item* Room::drop_item(char* item_id)
 
 bool Room::room_items()
 {
-  if(inventory.empty())
+  if(inv.empty())
     {
       return false;
     }
