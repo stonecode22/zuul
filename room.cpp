@@ -12,22 +12,22 @@ Room::Room(char* new_id, char* new_desc)
   desc = new_desc;
 }
 
-char* Room::get_id()
+char* Room::get_id() //Gets the ID of rooms
 {
   return id;
 }
 
-char* Room::get_desc()
+char* Room::get_desc() //Gets the descriptions of rooms
 {
   return desc;
 }
 
-void Room::set_exit(int direction, Room* next_room)
+void Room::set_exit(int direction, Room* next_room) //Moves to a different room
 {
   exitMap[direction] = next_room;
 }
 
-Room *Room::get_exit(int exit)
+Room *Room::get_exit(int exit) //Sets up the exits for the rooms
 {
   map<int, Room*>::iterator it;
   it = exitMap.find(exit);
@@ -42,26 +42,26 @@ Room *Room::get_exit(int exit)
     }
 }
 
-void Room:: add_item(item* new_item)
+void Room:: add_item(item* new_item) //Adds items to a room
 {
   inv.push_back(new_item);
 }
 
-item* Room::drop_item(char* item_id)
+item* Room::drop_item(char* item_id) //Drop item from inventory
 {
   for(int i = 0; i < inv.size(); i++)
     {
       if(!strcmp(item_id, inv.at(i)->id))
 	{
-	  item* get_item = inv.at(i);
+	  item* rm_item = inv.at(i);
 	  inv.erase(inv.begin() + i);
-	  return get_item;
+	  return rm_item;
 	}
     }
   return 0;
 }
 
-bool Room::room_items()
+bool Room::room_items() //If a room has items or not
 {
   if(inv.empty())
     {

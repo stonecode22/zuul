@@ -12,7 +12,7 @@ struct item
 class Room
 {
  public:
-  Room(char* , char*);
+  Room(char* , char*); //Defining functions going into room.cpp & main.cpp
   char* get_id();
   char* get_desc();
   void set_exit(int direction, Room* next_room);
