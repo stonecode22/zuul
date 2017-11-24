@@ -2,10 +2,6 @@
 /An adventure game where the main character is stuck in a prison, struggling to get out.
 /The player must find items to win/unlock conditions in order to win
 /The player has 3 loss conditions (getting caught by guards) and 4 win conditions (escape!)
-/z
-/
-/
-/
 */
 #include<iostream>
 #include<vector>
@@ -42,7 +38,7 @@ int main()
     }
   cout << endl << "This is the chance you've been waiting for. You have to escape." << endl;
 
-  //initialization of all rooms & descriptions
+  //initialization of all rooms & descriptions (cred to Harish Palani yet again for showing me how to do this)
   Room* cell_1 = new Room((char*) "Cell #761", (char*) "Home sweet home.");
   Room* cell_2 = new Room((char*) "Cell #760", (char*) "You see your neighboring cellmate. You still don't know his name.");
   Room* cell_3 = new Room((char*) "Cell #762", (char*) "You see an empty cell. One of the drawers are left open.");
